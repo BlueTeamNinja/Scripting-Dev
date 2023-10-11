@@ -8,4 +8,7 @@ Write-Output "Searching all .txt files in $dir_path for email addresses..."
 $files_to_search = Join-Path $dir_path "*.csv"
 
 # Search all .txt files in the specified directory for valid email addresses
-Select-String -Path $files_to_search -Pattern "[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"
+$email_rows = Select-String -Path $files_to_search -Pattern "[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" | Select-Object -First 10
+$email_count = $email_rows | Measure-Object -Property count
+Write-Output $email_rows
+Write-Output "$email_count emails were found."

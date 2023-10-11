@@ -45,8 +45,8 @@ if($submission[0].Name -like "assignment_4.ps1"){
 }
 
 try{
-    $testLaunch = . $submission[0].FullName '/autograder/submission/'
-    $testLaunch_notrail = . $submission[0].FullName '/autograder/submission'
+    $testLaunch = . $submission[0].FullName '/autograder/source/data/'
+    $testLaunch_notrail = . $submission[0].FullName '/autograder/source/data'
 
         if($testLaunch -ne $testLaunch_notrail){
             $testsArray += New-TestCase -Name "Trailing slash test" -Output "Your submission produces different results with or without a trailing slash." -Score -5.0 -Status 'failed'
@@ -54,13 +54,26 @@ try{
         }
 
     }catch{
-        $testsArray += New-TestCase -Name "**FAIL** - Script Execution" -Output "Your submission did not successfully execute.  This means it cannot be graded and results in a grade of 0." -Score -50.0 -Status 'failed'
+        $testsArray += New-TestCase -Name "**FAIL** - Script Execution" -Output "Your submission did not successfully execute with or without a trailing slash.  This means it cannot be graded and results in a grade of 0." -Score -50.0 -Status 'failed'
 
     }
 
-$test2 = New-TestCase -Name "Test2" -Output "Another output" -Visibility "visible" -Score 2.0
+if($null -eq $search_directory){
+$testsArray = New-TestCase -Name "Search Directory" -Output "No Search Directory variable detected" -Visibility "visible" -Score -5.0 -status 'failed'
+}
 
-# Combine the tests into an array
+if($null -eq $email_rows){
+$testsArray = New-TestCase -Name "Email Rows" -Output "No email_rows variable detected" -Visibility "visible" -Score -5.0 -status 'failed'
+
+}
+
+$expectedresult = . ./Find-EmailSolution.ps1 '/autograder/source/data/'
+
+if($testLaunch -ne $expectedresult){
+    $testsArray = New-TestCase -Name "Output Mismatch" -Output "Test output: $expectedresult\n\nYour Output: $testLaunch" -Visibility "visible" -Score -10.0 -status 'failed'
+
+}
+# Combine the test's into an array
 
 # Create the main JSON structure
 $results = @{
