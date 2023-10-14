@@ -1,0 +1,17 @@
+{
+  "extra_data": {},
+  "stdout_visibility": "visible",
+  "output_format": "simple_format",
+  "output": "Thank you for your submission.",
+  "visibility": "visible",
+  "test_output_format": "simple_format",
+  "tests": [
+    {
+      "name": "**FAIL** - No submission",
+      "score": -50.0,
+      "output": "Your submission did not include a powershell script.  This means it cannot be graded and results in a grade of 0.",
+      "status": "failed"
+    }
+  ],
+  "test_name_format": "simple_format"
+}
