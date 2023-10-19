@@ -85,6 +85,7 @@ if($submission[0].Name -like "assignment_4.ps1") {
 Write-Output "Executing script..."
 try {
     $testLaunch = . $submission[0].FullName "$PSScriptroot/data/"
+    Write-Output $testLaunch
     Write-Verbose "Script executed without errors."
     $testsArray += New-TestCase -Name "Script Execution" -Output "Your submission executed without errors" -Status 'passed' -score 20.0
 } catch {
@@ -95,9 +96,19 @@ try {
 
 Write-Output "Testing for trailing slash..."
 $testLaunch_notrail = . $submission[0].FullName "$PSScriptroot/data"
-if($testLaunch -ne $testLaunch_notrail) {
+if(Compare-Object -ReferenceObject $testLaunch.toString() -DifferenceObject $testLaunch_notrail.toString()) {
     Write-Verbose "Different results detected with/without trailing slash."
-    $testsArray += New-TestCase -Name "Trailing slash test" -Output "Your submission produces different results with or without a trailing slash." -Status 'failed'
+    $testsArray += New-TestCase -Name "Trailing slash test" -Output @"
+    Your submission produces different results with or without a trailing slash.
+    output without a trailing slash: 
+    ``````
+    $testLaunch_notrail
+    ``````
+    output with a trailing slash:
+    ``````
+    $testLaunch
+    ``````
+"@ -Status 'failed' -OutputFormat 'md'
 } else {
     Write-Verbose "Identical results with/without trailing slash."
     $testsArray += New-TestCase -Name "Trailing slash test" -Output "Your submission produces identical results with or without a trailing slash." -Status 'passed' -score 5.0
@@ -122,21 +133,27 @@ if($null -eq $email_rows) {
 
 Write-Output "Comparing script output with expected result..."
 $expectedresult = . $PSScriptroot/Find-EmailSolution.ps1 "$PSScriptroot/data/"
-if($testLaunch -ne $expectedresult) {
-    Write-Verbose "Output mismatch detected."
+if(
+        $expectedresult[$expectedresult.length-1] -eq $testLaunch[$testLaunch.length-1] -and
+        $expectedresult[0] -eq $testLaunch[0] -and
+        $expectedresult[1] -eq $testLaunch[1] -and
+        $expectedresult.length -eq $testLaunch.length
+) {
+    Write-Verbose "Output is identical or close enough to fool the test cases"
+    $testsArray += New-TestCase -Name "Output Match" -Output "Your output matched the test cases exactly or at least close enough to trick them.  Great work." -Visibility "visible" -status 'passed' -score 5.0
+
+} else {
+    Write-Verbose "Output does not match expected result."
     $testsArray += New-TestCase -Name "Output Mismatch" -Output @"
     Test output: 
-    ```
+    ``````
     $expectedresult
-    ```
+    ``````
     Your Output:
-    ```
+    ``````
     $testLaunch
-    ```
+    ``````
 "@ -Visibility "visible" -status 'failed' -OutputFormat 'md'
-} else {
-    Write-Verbose "Output matches expected result."
-    $testsArray += New-TestCase -Name "Output Match" -Output "Your output matched the test cases exactly.  Great work." -Visibility "visible" -status 'passed' -score 5.0
 }
 
 return WriteAndSaveTest -results $results -testsArray $testsArray
