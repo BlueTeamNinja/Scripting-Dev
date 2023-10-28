@@ -24,6 +24,8 @@ function New-TestCase {
     if ($Number) { $testCase["number"] = $Number }
     if ($Tags) { $testCase["tags"] = $Tags }
     if ($ExtraData) { $testCase["extra_data"] = $ExtraData }
+    if ($OutputFormat) { $testCase["output_format"] = $OutputFormat }
+
 
     return $testCase
 }
@@ -34,6 +36,15 @@ function WriteAndSaveTest {
         $testsArray
     )
 
+    # Calculate the total score from the test cases
+    $totalScore = ($testsArray | Measure-Object -Property score -Sum).Sum
+    # If the total score is negative, adjust it to 0
+    if ($totalScore -lt 0) {
+        foreach ($test in $testsArray) {
+            $test.score = 0
+        }
+    }
+    
     $results.tests = $testsArray
 
     $jsonData = $results | ConvertTo-Json -Depth 4
@@ -47,7 +58,7 @@ $testsArray = @()
 $results = @{
     output             = "Thank you for your submission."
     output_format      = "simple_format"
-    test_output_format = "simple_format"
+    test_output_format = "md"
     test_name_format   = "simple_format"
     visibility         = "visible"
     stdout_visibility  = "visible"
@@ -133,27 +144,31 @@ if($null -eq $email_rows) {
 
 Write-Output "Comparing script output with expected result..."
 $expectedresult = . $PSScriptroot/Find-EmailSolution.ps1 "$PSScriptroot/data/"
-if(
-        $expectedresult[$expectedresult.length-1] -eq $testLaunch[$testLaunch.length-1] -and
-        $expectedresult[0] -eq $testLaunch[0] -and
-        $expectedresult[1] -eq $testLaunch[1] -and
-        $expectedresult.length -eq $testLaunch.length
+# Format objects to string literals
+$expectedresult = $expectedresult | ForEach-Object {$_.ToString()}
+$testLaunchString = $testLaunch | ForEach-Object {$_.ToString()}
+$OutputCompare = Compare-Object -ReferenceObject $expectedresult -DifferenceObject $testLaunchString
+if( -not $OutputCompare
 ) {
     Write-Verbose "Output is identical or close enough to fool the test cases"
     $testsArray += New-TestCase -Name "Output Match" -Output "Your output matched the test cases exactly or at least close enough to trick them.  Great work." -Visibility "visible" -status 'passed' -score 5.0
 
 } else {
+    #Finding Differences
+    $WrongLines = $outputCompare | ForEach-Object {if($_.sideIndicator -like '=>'){$_.InputObject}}
     Write-Verbose "Output does not match expected result."
     $testsArray += New-TestCase -Name "Output Mismatch" -Output @"
-    Test output: 
-    ``````
+    Output that does not match:
+    * * * * * * *
+    $wrongLines
+    * * * * * * *
+    Expected Output: 
+    * * * * * * *
     $expectedresult
-    ``````
-    Your Output:
-    ``````
-    $testLaunch
-    ``````
-"@ -Visibility "visible" -status 'failed' -OutputFormat 'md'
+    * * * * * * *
+
+
+"@ -Visibility "visible" -status 'failed'
 }
 
 return WriteAndSaveTest -results $results -testsArray $testsArray
