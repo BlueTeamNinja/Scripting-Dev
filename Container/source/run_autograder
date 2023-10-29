@@ -1,4 +1,0 @@
-#!/bin/bash
-
-echo "running autograder"
-pwsh -File /autograder/source/posh_tests.ps1

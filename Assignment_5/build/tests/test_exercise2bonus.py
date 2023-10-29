@@ -8,7 +8,8 @@ sys.path.append('/autograder/submission')
 
 class TestExercise2Bonus(unittest.TestCase): 
     @weight(0)
-    def test_exercise2_bonus(self):
+    @partial_credit(0)
+    def test_exercise2_bonus(self, set_score=None):
         """Testing Exercise 2 Bonus - Proper use of variables and calculations"""
         # Dynamically import and reload A5E2 to ensure it runs
         import A5E2
@@ -38,7 +39,7 @@ Total:\t\t$ {expected_total:.2f}'''
         self.assertEqual(output, expected_output)
 
         # Award bonus marks if everything passed
-        set_score(20)
+        set_score(15)
 
 
 if __name__ == "__main__":

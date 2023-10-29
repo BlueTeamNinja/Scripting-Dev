@@ -1,2 +1,0 @@
-docker run --rm -v /Sample:/autograder/submission -v /results:/autograder/results -v /source:/autograder/source -v D:\Code\Scripting-Fundamentals\Assignment_4/run_autograder:/autograder/run_autograder gradescope/autograder-base
- /autograder/run_autograder && cat /results/results.json
