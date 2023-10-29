@@ -1,0 +1,49 @@
+{
+    "tests": [
+        {
+            "name": "Testing Exercise 1 - Its all or nothing",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed",
+            "output": "Holy cow! I can't believe I'm programming a computer.\nScripting in Python is so \"freakin\" cool!\nPerhaps someday I'll be a Python \"guru\".\nSomeday, I could get a job at spotify\\reddit\\tinder\\alphabet.\n\n"
+        },
+        {
+            "name": "Testing Exercise 2 - Proper Format output",
+            "score": 20,
+            "max_score": 20,
+            "status": "passed",
+            "output": "Food Item\tPrice\n==========\t=======\nCheeseburger\t$ 4.99\n+ Bacon\t\t$ 1.00\nFries w/gravy\t$ 2.59\nMilkshake\t$ 2.99\n-------\nSub-total:\t$ 11.57\nTax (13%):\t$ 1.50\nTotal:\t\t$ 13.07\n"
+        },
+        {
+            "name": "Testing Exercise 2 Bonus - Proper use of variables and calculations",
+            "score": 0.0,
+            "max_score": 0,
+            "status": "failed",
+            "output": "Food Item\tPrice\n==========\t=======\nCheeseburger\t$ 4.99\n+ Bacon\t\t$ 1.00\nFries w/gravy\t$ 2.59\nMilkshake\t$ 2.99\n-------\nSub-total:\t$ 11.57\nTax (13%):\t$ 1.50\nTotal:\t\t$ 13.07\n\nTest Failed: name 'set_score' is not defined\n"
+        },
+        {
+            "name": "Testing Exercise 3 - Proper Format output",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed",
+            "output": "roses are red,\nviolets are blue,\nunexpected '{'\non line 32.\n"
+        },
+        {
+            "name": "Testing Exercise 3 - Variables used",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed"
+        },
+        {
+            "name": "Check submitted files",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed",
+            "output": "All required files submitted!\n"
+        }
+    ],
+    "leaderboard": [],
+    "visibility": "visible",
+    "execution_time": "0.12",
+    "score": 60.0
+}

@@ -37,15 +37,15 @@ Tax (13%):      $ 1.50
 Total:          $ 13.07
 ```
 
-> Notes: Your script does not have to use any variables or perform any calculations
+> Notes: Your script does not need to have any variables or perform any calculations unless you're going for the bonus!
 
 ### Exercise 2 - BONUS MARKS
 Bonus marks will be awarded if you script does all the following things:
-1. Food item prices are stored in descriptively named variables,
+1. Food item prices are stored in variables matching their item (`cheeseburger`,`fries_w_gravy`, etc),
 1. Those variables are used to print the food item prices,
-1. The tax percentage is held in a descriptively named variable,
+1. The tax percentage is held in a variable named `tax`,
 1. That variable is used to print the tax percentage, and
-1. The printed sub-total, tax, and total are calculated by the script.
+1. The printed `subtotal`, `tax`, and `total` are calculated by the script.
 1. You will need to do some research to figure out how to perform the calculations and round the results to the nearest cent, since we have not yet covered these aspects of Python scripting in the course, but we will soon.
 
 ## EXERCISE 3
