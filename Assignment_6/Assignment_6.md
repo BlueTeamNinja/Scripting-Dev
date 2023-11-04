@@ -112,6 +112,9 @@ use it in the calculations.
 * The int() function will throw an exception if its argument cannot be converted to an 
 integer. Use `try` and `except` to catch such an exception and print a descriptive error message if the value entered by the user is not a valid integer. See the examples on lecture slides 45 and 57.
 
+### GRADESCOPE SUBMISSION 
+A Python script named `A6E3.py`
+
 ## DOCSTRING SAMPLE
 
 This is the style that the auto-grader is looking for.  By now you're aware of paying attention to where newlines are and formatting conditions!  Details are everything! 
@@ -127,8 +130,3 @@ Author: Abe the Sorcerer
 """
 
 ```
-
-
-
-### GRADESCOPE SUBMISSION 
-A Python script named `A6E3.py`
