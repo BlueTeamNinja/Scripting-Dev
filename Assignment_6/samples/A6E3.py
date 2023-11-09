@@ -1,32 +1,24 @@
+
 """
-This script prompts the user for a distance in inches and then prints the equivalent in feet and inches.
+This script takes a command line argument in inches and converts it to feet and inches.
 
-Example usage:
-python A6E3.py
+Ex.
+python A6E3.py 123
 
-Author: Your Name
+Output:
+123" == 10'3"
+
+Author: The Donkey from Shrek
 """
 
-# Constants
-INCHES_PER_FEET = 12
+import sys
 
-def convert_inches_to_feet_and_inches(inches):
-    feet = inches // INCHES_PER_FEET
-    remaining_inches = inches % INCHES_PER_FEET
-    return feet, remaining_inches
+inches = sys.argv[1]
 
 try:
-    # Prompt user for input
-    inches_input = input("Enter a distance in inches: ")
-    
-    # Convert input to an integer
-    inches = int(inches_input)
-    
-    # Conversion
-    feet, remaining_inches = convert_inches_to_feet_and_inches(inches)
-    
-    # Output the result
-    print(f'{inches}" == {feet}\'{remaining_inches}"')
-except ValueError:
-    # Handle the exception if input is not an integer
-    print("Error: Distance in inches must be an integer.")
+    x = int(x)
+    in_feet = int(x) // 12
+    in_inches = int(x) - (12 * in_feet)
+    print(f"{inches}\" == {in_feet}\'{in_inches}\"")
+except:
+    print(f"Error: Distance in inches must be an integer")

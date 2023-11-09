@@ -5,7 +5,7 @@
 For all exercises, create Python scripts as described in the exercise instructions. Save these scripts in separate files named A6En.py, where n is the exercise number. Submit all script files to Gradescope Assignment 6.
 For each script, be sure following the best practices discussed in class, including:
 * Descriptive variable names
-* Consistent variable naming convention (snake_case or camelCase)
+* Consistent variable naming convention (snake_case, camelCase, or ALLCAPS for constants)
 * Module docstring that describes the script functionality and how to run it from the 
 command line
 * Block and/or inline comments describing portions of code that are not obvious
@@ -35,14 +35,14 @@ Dear Professor Melo: You rock!
 ```
 
 Hints:
-* To use command line parameters, the script must import argv from the sys module (Check the  Module 6 PDF for a refresher)
+* To use command line parameters, the script must import argv from the sys module (Check the Module 6 PDF for a refresher)
 * The first command line parameter value is in `argv[1]`.
 
 ### GRADESCOPE SUBMISSION 
 A Python script named `A6E1.py`
  
 ## EXERCISE 2 
-Write a Python script that accepts one command line parameter that is a temperature in degrees Fahrenheit (F), and then prints out the equivalent temperatures in degrees Celsius (C) and Kelvin (K). All three temperatures printed by the script must be rounded to 2 decimal  places. Script output must be exactly as shown in the example script output below.
+Write a Python script that accepts one command line parameter that is a temperature in degrees Fahrenheit (F), and then prints out the equivalent temperatures in degrees Celsius (C) and Kelvin (K). All three temperatures printed by the script must be rounded to 2 decimal places. Script output must be exactly as shown in the example script output below.
 
 Example script output:  
 `PS C:\> python A6E2.py 32`
@@ -75,10 +75,7 @@ https://www.nist.gov/pml/owm/si-units-temperature
 A Python script named A6E2.py
  
 ## EXERCISE 3 
-Write a Python script that asks the user to enter a distance in inches, and then prints out the 
-equivalent distance in feet and inches. If the user enters a value that is not an integer, the 
-script must print a descriptive error message. Script output must be exactly as shown in the 
-example script output below.
+Write a Python script that asks the user to enter a distance in inches, and then prints out the equivalent distance in feet and inches. If the user enters a value that is not an integer, the script must print a descriptive error message. Script output must be exactly as shown in the example script output below.
 
 Example script output:
 
@@ -107,8 +104,7 @@ Hints:
 * The input() function always returns a string that must be converted to a number to be 
 used in an arithmetic expression.
 * The arithmetic expressions for this script will be like the example on lecture slide 17.
-* Don't use magic numbers! Create a named constant like INCHES_PER_FEET = 12 and 
-use it in the calculations.
+* Don't use [magic numbers](https://therenegadecoder.com/code/what-is-a-magic-number-and-how-do-we-fix-it/)! Create a named constant `INCHES_PER_FEET = 12` and use it in the calculations.
 * The int() function will throw an exception if its argument cannot be converted to an 
 integer. Use `try` and `except` to catch such an exception and print a descriptive error message if the value entered by the user is not a valid integer. See the examples on lecture slides 45 and 57.
 
