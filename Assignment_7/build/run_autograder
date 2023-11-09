@@ -1,0 +1,12 @@
+#!/bin/bash
+# Set up autograder files
+
+#clean up for testing
+rm -rf /autograder/source/A7*.py
+cp /autograder/submission/*.py /autograder/source/
+cd /autograder/source
+
+python3 run_tests.py
+#clean up again because its confusing without it
+rm -rf /autograder/source/A7*.py
+rm -rf __pycache* ./tests/__pycache*

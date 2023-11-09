@@ -1,0 +1,38 @@
+{
+    "tests": [
+        {
+            "name": "test_fahrenheit_to_celsius (test_A7E1.TestA7E1)",
+            "score": 5,
+            "max_score": 5,
+            "status": "passed"
+        },
+        {
+            "name": "test_fahrenheit_to_kelvin (test_A7E1.TestA7E1)",
+            "score": 5,
+            "max_score": 5,
+            "status": "passed"
+        },
+        {
+            "name": "test_script_run_command (test_A7E2.TestA7E2)",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed"
+        },
+        {
+            "name": "test_calc_total_seconds_invalid (test_A7E3.TestA7E3)",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed"
+        },
+        {
+            "name": "test_calc_total_seconds_valid (test_A7E3.TestA7E3)",
+            "score": 20,
+            "max_score": 20,
+            "status": "passed"
+        }
+    ],
+    "leaderboard": [],
+    "visibility": "visible",
+    "execution_time": "0.03",
+    "score": 50
+}
