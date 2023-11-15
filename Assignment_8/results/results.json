@@ -1,0 +1,91 @@
+{
+    "tests": [
+        {
+            "name": "A8E1 - Equal Numbers Test - Checks if the function correctly returns 0 for equal integers",
+            "score": 2,
+            "max_score": 2,
+            "status": "passed"
+        },
+        {
+            "name": "A8E1 - Mixed Numbers Test - Checks if the function correctly handles one positive and one negative integer",
+            "score": 2,
+            "max_score": 2,
+            "status": "passed"
+        },
+        {
+            "name": "A8E1 - Negative Numbers Test - Checks if the function correctly handles negative integers",
+            "score": 2,
+            "max_score": 2,
+            "status": "passed"
+        },
+        {
+            "name": "A8E1 - No Function Calls Test - Ensures no additional function calls like min(), max(), etc., are used",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed"
+        },
+        {
+            "name": "A8E1 - Non-integer Input Test - Checks if the function correctly returns None for non-integer inputs",
+            "score": 2,
+            "max_score": 2,
+            "status": "passed"
+        },
+        {
+            "name": "A8E1 - Positive Numbers Test - Checks if the function correctly handles positive integers",
+            "score": 2,
+            "max_score": 2,
+            "status": "passed"
+        },
+        {
+            "name": "A8E2 - Computer Choice Test - Checks if the computer's choice is randomly generated",
+            "score": 5,
+            "max_score": 5,
+            "status": "passed",
+            "output": "The computer chose rock.\n"
+        },
+        {
+            "name": "A8E2 - Game Result Test - Checks if the game result is calculated correctly",
+            "score": 15,
+            "max_score": 15,
+            "status": "passed",
+            "output": "You win!\nYou win!\nYou win!\nYou lose.\nYou lose.\nYou lose.\nIt's a draw.\n"
+        },
+        {
+            "name": "A8E2 - Invalid Input Test - Checks if the function handles invalid inputs correctly",
+            "score": 5,
+            "max_score": 5,
+            "status": "passed",
+            "output": "You chose x.\n"
+        },
+        {
+            "name": "A8E2 - Valid Input Test - Checks if the function handles valid inputs correctly",
+            "score": 5,
+            "max_score": 5,
+            "status": "passed",
+            "output": "You chose rock.\n"
+        },
+        {
+            "name": "COMMON: Proper docstring and comments.",
+            "score": 0.0,
+            "max_score": 10,
+            "status": "failed",
+            "output": "Test Failed: unexpectedly None : A8E1.py must have a module docstring\n"
+        },
+        {
+            "name": "COMMON: Script files are named correctly.",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed"
+        },
+        {
+            "name": "COMMON: No code in the global namespace other than allowed function definitions or Python incantation.",
+            "score": 30,
+            "max_score": 30,
+            "status": "passed"
+        }
+    ],
+    "leaderboard": [],
+    "visibility": "visible",
+    "execution_time": "0.03",
+    "score": 90.0
+}

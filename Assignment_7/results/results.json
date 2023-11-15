@@ -13,6 +13,13 @@
             "status": "passed"
         },
         {
+            "name": "Check for global input usage",
+            "score": 0.0,
+            "max_score": 0,
+            "status": "failed",
+            "output": "Test Failed: name 'inspect' is not defined\n"
+        },
+        {
             "name": "A7E2: Checking script_run_command() with various inputs",
             "score": 30,
             "max_score": 30,
@@ -46,9 +53,10 @@
         },
         {
             "name": "BONUS: Test Exercise 3 for default parameters.",
-            "score": 30,
+            "score": 0.0,
             "max_score": 30,
-            "status": "passed"
+            "status": "failed",
+            "output": "Test Failed: False is not true : Exercise 3 failed: Default parameters do not match any of the expected start times within a 10-minute leeway.\n"
         },
         {
             "name": "COMMON: Proper docstring and comments.",
@@ -72,6 +80,6 @@
     ],
     "leaderboard": [],
     "visibility": "visible",
-    "execution_time": "0.10",
-    "score": 140.0
+    "execution_time": "0.05",
+    "score": 110.0
 }

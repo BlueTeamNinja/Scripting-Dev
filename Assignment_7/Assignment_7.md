@@ -173,12 +173,15 @@ def calculate_time_since_ada_birth(current_datetime):
 
 def display_result(time_diff):
     """Display the result in a human-readable format."""
-    days = time_diff.days
-    seconds = time_diff.seconds
-    hours = days * HOURS_PER_DAY + seconds // SECONDS_PER_MINUTE // MINUTES_PER_HOUR
-    minutes = (seconds // SECONDS_PER_MINUTE) % MINUTES_PER_HOUR
-    seconds = seconds % SECONDS_PER_MINUTE
-    print(f"It's been {hours} hours, {minutes} minutes and {seconds} seconds since computer programming was invented.")
+
+    # Bonus clues live here
+    # ======================
+    # Note the .total_seconds() function from the object and the rest of the calculations trickling down from there.
+    seconds = int(time_diff.total_seconds())
+    minutes = int(seconds // SECONDS_PER_MINUTE)
+    hours = int(minutes // MINUTES_PER_HOUR )
+    
+    print(f"It's been:\n\t{hours}\t\thours\n\t{minutes}\tminutes or\n\t{seconds}\tseconds\n...since computer programming was invented.")
     print("That occurred approximately 2pm December 10, 1815 with the birth of Ada Lovelace.")
 
 def main():

@@ -59,7 +59,7 @@ class TestBonus(unittest.TestCase):
         actual_seconds = module.calc_total_seconds()
         leeway_seconds = 10 * 60
         passed = any(abs(actual_seconds - possible) <= leeway_seconds for possible in possible_seconds)
-        self.assertTrue(passed, "Exercise 3 failed: Default parameters do not match any of the expected start times within a 10-minute leeway.")
+        self.assertTrue(passed, f"Exercise 3 failed: Expecting {possible_seconds[0]},{possible_seconds[1]},{possible_seconds[2]}, or {possible_seconds[3]} give or take 600 (10 minutes)\nReceived: {actual_seconds}.")
 
 if __name__ == '__main__':
     unittest.main()
