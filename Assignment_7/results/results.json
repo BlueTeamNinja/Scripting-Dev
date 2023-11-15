@@ -1,38 +1,77 @@
 {
     "tests": [
         {
-            "name": "test_fahrenheit_to_celsius (test_A7E1.TestA7E1)",
-            "score": 5,
-            "max_score": 5,
+            "name": "A7E1: Testing convert_fahrenheit_to_celsius() with various values",
+            "score": 15,
+            "max_score": 15,
             "status": "passed"
         },
         {
-            "name": "test_fahrenheit_to_kelvin (test_A7E1.TestA7E1)",
-            "score": 5,
-            "max_score": 5,
+            "name": "A7E1: Testing convert_celsius_to_fahrenheit() with various values",
+            "score": 15,
+            "max_score": 15,
             "status": "passed"
         },
         {
-            "name": "test_script_run_command (test_A7E2.TestA7E2)",
-            "score": 10,
+            "name": "A7E2: Checking script_run_command() with various inputs",
+            "score": 30,
+            "max_score": 30,
+            "status": "passed"
+        },
+        {
+            "name": "A7E3: Test with invalid input",
+            "score": 15,
+            "max_score": 15,
+            "status": "passed"
+        },
+        {
+            "name": "A7E3: Test with valid input",
+            "score": 15,
+            "max_score": 15,
+            "status": "passed"
+        },
+        {
+            "name": "BONUS: Test Exercise 1 for error-checking.",
+            "score": 0.0,
             "max_score": 10,
-            "status": "passed"
+            "status": "failed",
+            "output": "Test Failed: \"That ain't gonna fly.\" not found in \"That ain't gonna fly, Marty.\" : Exercise 1 failed: Non-numeric input did not produce the expected error message.\n"
         },
         {
-            "name": "test_calc_total_seconds_invalid (test_A7E3.TestA7E3)",
-            "score": 10,
-            "max_score": 10,
-            "status": "passed"
-        },
-        {
-            "name": "test_calc_total_seconds_valid (test_A7E3.TestA7E3)",
-            "score": 20,
+            "name": "BONUS: Test for get_script_name() and get_script_location() in Exercise 2.",
+            "score": 0.0,
             "max_score": 20,
+            "status": "failed",
+            "output": "Test Failed: 'run_tests.py' != 'A7E2.py'\n- run_tests.py\n+ A7E2.py\n : Expected A7E2.py, got run_tests.py\n"
+        },
+        {
+            "name": "BONUS: Test Exercise 3 for default parameters.",
+            "score": 30,
+            "max_score": 30,
+            "status": "passed"
+        },
+        {
+            "name": "COMMON: Proper docstring and comments.",
+            "score": 0.0,
+            "max_score": 10,
+            "status": "failed",
+            "output": "Test Failed: False is not true : A7E1.py must contain at least 2 comments, please put them on their own line to be detected!\n"
+        },
+        {
+            "name": "COMMON: Script files are named correctly.",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed"
+        },
+        {
+            "name": "COMMON: Properly defined main function.",
+            "score": 10,
+            "max_score": 10,
             "status": "passed"
         }
     ],
     "leaderboard": [],
     "visibility": "visible",
-    "execution_time": "0.03",
-    "score": 50
+    "execution_time": "0.10",
+    "score": 140.0
 }

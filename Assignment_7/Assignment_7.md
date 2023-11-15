@@ -9,6 +9,12 @@ For each script, be sure following the best practices discussed in class, includ
 * Consistent variable naming convention (snake_case, camelCase, or ALLCAPS for constants)
 * Module docstring that describes the script functionality and how to run it from the command line if it accepts arguments
 * Block and/or inline comments describing portions of code that are not obvious.  Remember, you may not be as funny or original as you think you are with your comments but if you make me laugh, good job.
+* A main() function that executes the actual body of your script outside of the created functions
+* The "Python incantation": 
+```
+if __name__ == "__main__":
+    main()
+```
 
 Upon submission, your scripts will automatically be graded for functional correctness. Gradescope will generate a report that indicates the pass/fail result of each automated test. For failed tests, the report will describe why it failed and suggest possible sources of error in your script.
 
@@ -58,12 +64,14 @@ A Python script named `A7E1.py`
 
 # Exercise 2
 
-Write a Python function that returns the command string needed to run a script from the command line. The function must be named `script_run_command()`, and must accept the following parameters, in the order shown, having the names in **bold** and the specified default values:
+Write a Python function that **returns** the command string needed to run a script from the command line. The function must be named `script_run_command()`, and must accept the following parameters, in the order shown, having the names in **bold** and the specified default values:
 
 - Name of the script **file** , including the file extension (no default value)
 - Path of the **directory** in which the script file is located (default value 'C:\\COMP86')
  Note: Assume the argument does not have a trailing backslash
 - Name of the **interpreter** (default value 'python')
+- There is no need for error-checking the value of **file**
+- There is no need for the python incantation or a main() function, this script is purely just the function.  This is an example of a script being made to be reused. 
 
 Calling `script_run_command('script.py')` should return the value `python 'C:\COMP86\script.py'`
 
@@ -84,7 +92,8 @@ Here are more examples:
 
 **Hints:**
 
-- Use an f-string or the string concatenation operator **+** to build the script run command string.
+- Use an f-string or the string concatenation operator `+` to build the script run command string.
+- You can test using either the python CLI, or by using `print(script_run_command('script.py')`   
 
 ## Gradescope Submission
 
@@ -120,9 +129,85 @@ PS C:\> python A7E3.py 23 60 59
 
 **Hints:**
 
-- The `int()` function will throw an exception if its argument cannot be converted to an integer. Use `try` and `except` to catch such an exception and return `None` if any argument passed to `calc_total_seconds()` is not a valid integer. See the example on lecture slide 19.
+- The `int()` function will throw an exception if its argument cannot be converted to an integer. Use `try` and `except` to catch such an exception and return `None` if any argument passed to `calc_total_seconds()` is not a valid integer.
 - Don't worry about handling a `None` value returned by `calc_total_seconds()` in the `main()` function since we haven't learned how to do that yet. Your script can assume all command line parameter values are valid integers.
 
 ## Gradescope Submission
 
 A Python script named `A7E3.py`
+
+## Sample Script 
+
+This script meets all the common criteria.  I even made it all pretty and colour-coded for you!
+
+```python
+"""
+Description: This script prompts the user for the current date and time, calculates the time passed since 2pm, December 10, 1815, and outputs the result in a human-readable format.
+
+Parameters: None
+
+Author: Abe - Remember, this is my name NOT your name.  :D
+"""
+
+import datetime
+
+# Constants
+# Keep them capitalized and universal to avoid being a 'global variable' which is a bad habit.
+HOURS_PER_DAY = 24
+MINUTES_PER_HOUR = 60
+SECONDS_PER_MINUTE = 60
+
+def get_current_datetime():
+    """Prompt the user for the current date and time and return it as a datetime object."""
+    # User input for current date and time
+    user_input = input("Please enter the current date and time (YYYY-MM-DD HH:MM:SS): ")
+    return datetime.datetime.strptime(user_input, "%Y-%m-%d %H:%M:%S")
+
+def calculate_time_since_ada_birth(current_datetime):
+    """Calculate the time since Ada Lovelace's birth."""
+    # This is a comment, the above line is a docstring - these are valid descriptions of a function definition 
+    ada_birth = datetime.datetime(1815, 12, 10, 14, 0, 0)  # The format is Year, Month, Day, Hour, Minute, Second
+                                                           # Or 1400.00 (2pm) - December 10th, 1815
+    time_diff = current_datetime - ada_birth
+    return time_diff
+
+def display_result(time_diff):
+    """Display the result in a human-readable format."""
+    days = time_diff.days
+    seconds = time_diff.seconds
+    hours = days * HOURS_PER_DAY + seconds // SECONDS_PER_MINUTE // MINUTES_PER_HOUR
+    minutes = (seconds // SECONDS_PER_MINUTE) % MINUTES_PER_HOUR
+    seconds = seconds % SECONDS_PER_MINUTE
+    print(f"It's been {hours} hours, {minutes} minutes and {seconds} seconds since computer programming was invented.")
+    print("That occurred approximately 2pm December 10, 1815 with the birth of Ada Lovelace.")
+
+def main():
+    current_datetime = get_current_datetime()
+    time_since_ada_birth = calculate_time_since_ada_birth(current_datetime)
+    display_result(time_since_ada_birth)
+
+if __name__ == "__main__":
+    main()
+```
+
+## BONUS - ALL OR NOTHING
+
+* ALL bonus objectives must be achieved in order to get any bonus marks.
+* Since I made it harder, the bonus is pretty significant.  
+* Enjoy!  Don't hesitate to ask questions. 
+
+### Exercise 1
+* Add error-checking.  If the user enters anything that is not a number, print `"That ain't gonna fly."`
+
+### Exercise 2
+* Add two more functions:  
+`get_script_name()` - which will return the filename of the running script and
+`get_script_location()` - which will return the absolute path, excluding the filename of the running script.
+* Neither of these functions are used in the `main()`
+
+### Exercise 3
+* Make the default parameters for your function the actual hours, minutes and seconds since you started learning Scripting Fundamentals.  You'll find lots of clues on how to do that in this PDF. 
+* You either started at 5pm September 5th or 11th, 2023 or 8am September 7th or 8th depending on your course serial.
+* Yikes.  Now I have to figure out how on earth to test for these.  
+
+# Good luck and have fun!

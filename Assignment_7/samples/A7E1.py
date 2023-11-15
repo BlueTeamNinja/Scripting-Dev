@@ -3,6 +3,12 @@
 This script converts temperature from Fahrenheit to Celsius and Kelvin.
 It asks the user to input a temperature in Fahrenheit and prints out the equivalent in Celsius and Kelvin.
 """
+# Main Script Function
+def main():
+    fahrenheit = float(input("Enter a temperature in Fahrenheit: "))
+    celsius = convert_fahrenheit_to_celsius(fahrenheit)
+    kelvin = convert_fahrenheit_to_kelvin(fahrenheit)
+    print(f"{fahrenheit:.2f} F == {celsius:.2f} C == {kelvin:.2f} K")
 
 # Functions
 def convert_fahrenheit_to_celsius(fahrenheit):
@@ -13,9 +19,6 @@ def convert_fahrenheit_to_kelvin(fahrenheit):
     """ Convert Fahrenheit to Kelvin """
     return convert_fahrenheit_to_celsius(fahrenheit) + 273.15
 
-# Main script
+# Main Script Body
 if __name__ == "__main__":
-    fahrenheit = float(input("Enter a temperature in Fahrenheit: "))
-    celsius = convert_fahrenheit_to_celsius(fahrenheit)
-    kelvin = convert_fahrenheit_to_kelvin(fahrenheit)
-    print(f"{fahrenheit:.2f} F == {celsius:.2f} C == {kelvin:.2f} K")
+    main()
