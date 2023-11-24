@@ -1,0 +1,80 @@
+{
+    "tests": [
+        {
+            "name": "AI DETECTION",
+            "score": 0,
+            "max_score": 0,
+            "status": "passed"
+        },
+        {
+            "name": "A9E1 - Testing clean_string() for functionality",
+            "score": 60,
+            "max_score": 60,
+            "status": "passed"
+        },
+        {
+            "name": "A9E1 - Testing main() for error message",
+            "score": 0.0,
+            "max_score": 20,
+            "status": "failed",
+            "output": "Test Failed: main() takes 0 positional arguments but 1 was given\n"
+        },
+        {
+            "name": "A9E1 - Testing get_movie_desc() for valid input",
+            "score": 0.0,
+            "max_score": 20,
+            "status": "failed",
+            "output": "Test Failed: 'The movie is \"Star  Wars\", directed by George Lucas, starring Mark Hamill' != 'The movie is \"Star Wars\", directed by George Lucas, starring Mark Hamill'\n- The movie is \"Star  Wars\", directed by George Lucas, starring Mark Hamill\n?                   -\n+ The movie is \"Star Wars\", directed by George Lucas, starring Mark Hamill\n\n"
+        },
+        {
+            "name": "A9E1 - Testing get_movie_desc() for sequel",
+            "score": 20,
+            "max_score": 20,
+            "status": "passed"
+        },
+        {
+            "name": "A9E1 - Testing get_song_desc() for valid input",
+            "score": 20,
+            "max_score": 20,
+            "status": "passed"
+        },
+        {
+            "name": "AI DETECTION",
+            "score": 0,
+            "max_score": 0,
+            "status": "passed"
+        },
+        {
+            "name": "A9E2 - Testing calculate_grade_stats() for valid input",
+            "score": 0.0,
+            "max_score": 20,
+            "status": "failed",
+            "output": "Test Failed: Tuples differ: (7, 34.2, 96.9, 65.42857142857143) != (7, 34.2, 96.9, 65.4)\n\nFirst differing element 3:\n65.42857142857143\n65.4\n\n- (7, 34.2, 96.9, 65.42857142857143)\n?                     -------------\n\n+ (7, 34.2, 96.9, 65.4)\n"
+        },
+        {
+            "name": "A9E2 - Testing calculate_grade_stats() with zero grade",
+            "score": 0.0,
+            "max_score": 20,
+            "status": "failed",
+            "output": "Test Failed: Tuples differ: (5, 0.0, 84.79, 48.8226) != (4, 23.0, 84.79, 61.0)\n\nFirst differing element 0:\n5\n4\n\n- (5, 0.0, 84.79, 48.8226)\n+ (4, 23.0, 84.79, 61.0)\n"
+        },
+        {
+            "name": "A9E2 - Testing get_grade_list() for valid input",
+            "score": 0.0,
+            "max_score": 20,
+            "status": "failed",
+            "output": "Test Failed: get_grade_list() takes 0 positional arguments but 1 was given\n"
+        },
+        {
+            "name": "A9E2 - Testing main() for correct output",
+            "score": 0.0,
+            "max_score": 20,
+            "status": "failed",
+            "output": "Test Failed: main() takes 0 positional arguments but 1 was given\n"
+        }
+    ],
+    "leaderboard": [],
+    "visibility": "visible",
+    "execution_time": "0.02",
+    "score": 100.0
+}

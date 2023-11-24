@@ -10,7 +10,20 @@ SEC_PER_MIN = 60
 
 # Main Body
 def main():
-    main()
+    """ Main Body of Script """
+    # Get command line arguments
+    hours = sys.argv[1]
+    minutes = sys.argv[2]
+    seconds = sys.argv[3]
+    
+    # Calculate total seconds
+    total_seconds = calc_total_seconds(hours, minutes, seconds)
+    
+    # Print results
+    if total_seconds is None:
+        print("Please enter valid numbers for hours, minutes, and seconds.")
+    else:
+        print(f"{hours}:{minutes}:{seconds} == {total_seconds} seconds")
 
 # Functions
 def calc_total_seconds(hours, minutes, seconds):

@@ -13,11 +13,10 @@
             "status": "passed"
         },
         {
-            "name": "Check for global input usage",
-            "score": 0.0,
+            "name": "A7E1: Check for python incantation",
+            "score": 0,
             "max_score": 0,
-            "status": "failed",
-            "output": "Test Failed: name 'inspect' is not defined\n"
+            "status": "passed"
         },
         {
             "name": "A7E2: Checking script_run_command() with various inputs",
@@ -42,28 +41,28 @@
             "score": 0.0,
             "max_score": 10,
             "status": "failed",
-            "output": "Test Failed: \"That ain't gonna fly.\" not found in \"That ain't gonna fly, Marty.\" : Exercise 1 failed: Non-numeric input did not produce the expected error message.\n"
+            "output": "Test Failed: could not convert string to float: 'not_a_number'\n"
         },
         {
             "name": "BONUS: Test for get_script_name() and get_script_location() in Exercise 2.",
             "score": 0.0,
             "max_score": 20,
             "status": "failed",
-            "output": "Test Failed: 'run_tests.py' != 'A7E2.py'\n- run_tests.py\n+ A7E2.py\n : Expected A7E2.py, got run_tests.py\n"
+            "output": "Test Failed: cannot import name 'get_script_name' from 'A7E2' (/autograder/source/A7E2.py)\n"
         },
         {
             "name": "BONUS: Test Exercise 3 for default parameters.",
             "score": 0.0,
             "max_score": 30,
             "status": "failed",
-            "output": "Test Failed: False is not true : Exercise 3 failed: Default parameters do not match any of the expected start times within a 10-minute leeway.\n"
+            "output": "Test Failed: calc_total_seconds() missing 3 required positional arguments: 'hours', 'minutes', and 'seconds'\n"
         },
         {
             "name": "COMMON: Proper docstring and comments.",
             "score": 0.0,
             "max_score": 10,
             "status": "failed",
-            "output": "Test Failed: False is not true : A7E1.py must contain at least 2 comments, please put them on their own line to be detected!\n"
+            "output": "Test Failed: 'Description' not found in 'This script converts temperature from Fahrenheit to Celsius and Kelvin.\\nIt asks the user to input a temperature in Fahrenheit and prints out the equivalent in Celsius and Kelvin.' : A7E1.py docstring must contain 'Description'\n"
         },
         {
             "name": "COMMON: Script files are named correctly.",
@@ -80,6 +79,6 @@
     ],
     "leaderboard": [],
     "visibility": "visible",
-    "execution_time": "0.05",
+    "execution_time": "0.08",
     "score": 110.0
 }

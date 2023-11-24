@@ -4,7 +4,7 @@ import sys
 
 from A7E2 import script_run_command
 
-sys.path.append('/autograder/submission')
+sys.path.append('/autograder/source')
 
 class TestA7E2(unittest.TestCase):
     
