@@ -2,29 +2,28 @@
     "tests": [
         {
             "name": "AI DETECTION",
-            "score": 0,
+            "score": 0.0,
             "max_score": 0,
-            "status": "passed"
+            "status": "failed",
+            "output": "Test Failed: 'D3ADB33FCAF3' != 'You will receive a 0 for this assignment [49 chars]ode.'\n- D3ADB33FCAF3\n+ You will receive a 0 for this assignment and have been reported for not writing your own code.\n\n"
         },
         {
             "name": "A9E1 - Testing clean_string() for functionality",
-            "score": 60,
-            "max_score": 60,
+            "score": 40,
+            "max_score": 40,
             "status": "passed"
         },
         {
-            "name": "A9E1 - Testing main() for error message",
-            "score": 0.0,
-            "max_score": 20,
-            "status": "failed",
-            "output": "Test Failed: main() takes 0 positional arguments but 1 was given\n"
+            "name": "A9E1 - Testing main() for complete functionality",
+            "score": 50,
+            "max_score": 50,
+            "status": "passed"
         },
         {
             "name": "A9E1 - Testing get_movie_desc() for valid input",
-            "score": 0.0,
+            "score": 20,
             "max_score": 20,
-            "status": "failed",
-            "output": "Test Failed: 'The movie is \"Star  Wars\", directed by George Lucas, starring Mark Hamill' != 'The movie is \"Star Wars\", directed by George Lucas, starring Mark Hamill'\n- The movie is \"Star  Wars\", directed by George Lucas, starring Mark Hamill\n?                   -\n+ The movie is \"Star Wars\", directed by George Lucas, starring Mark Hamill\n\n"
+            "status": "passed"
         },
         {
             "name": "A9E1 - Testing get_movie_desc() for sequel",
@@ -45,36 +44,32 @@
             "status": "passed"
         },
         {
-            "name": "A9E2 - Testing calculate_grade_stats() for valid input",
-            "score": 0.0,
-            "max_score": 20,
-            "status": "failed",
-            "output": "Test Failed: Tuples differ: (7, 34.2, 96.9, 65.42857142857143) != (7, 34.2, 96.9, 65.4)\n\nFirst differing element 3:\n65.42857142857143\n65.4\n\n- (7, 34.2, 96.9, 65.42857142857143)\n?                     -------------\n\n+ (7, 34.2, 96.9, 65.4)\n"
+            "name": "A9E2 - Testing calculate_grade_stats() for valid output",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed"
         },
         {
             "name": "A9E2 - Testing calculate_grade_stats() with zero grade",
-            "score": 0.0,
+            "score": 20,
             "max_score": 20,
-            "status": "failed",
-            "output": "Test Failed: Tuples differ: (5, 0.0, 84.79, 48.8226) != (4, 23.0, 84.79, 61.0)\n\nFirst differing element 0:\n5\n4\n\n- (5, 0.0, 84.79, 48.8226)\n+ (4, 23.0, 84.79, 61.0)\n"
+            "status": "passed"
         },
         {
-            "name": "A9E2 - Testing get_grade_list() for valid input",
-            "score": 0.0,
+            "name": "A9E2 - Testing get_grade_list() with a zero grade",
+            "score": 20,
             "max_score": 20,
-            "status": "failed",
-            "output": "Test Failed: get_grade_list() takes 0 positional arguments but 1 was given\n"
+            "status": "passed"
         },
         {
-            "name": "A9E2 - Testing main() for correct output",
-            "score": 0.0,
-            "max_score": 20,
-            "status": "failed",
-            "output": "Test Failed: main() takes 0 positional arguments but 1 was given\n"
+            "name": "A9E2 - Testing main() for complete functionality",
+            "score": 50,
+            "max_score": 50,
+            "status": "passed"
         }
     ],
     "leaderboard": [],
     "visibility": "visible",
-    "execution_time": "0.02",
-    "score": 100.0
+    "execution_time": "0.01",
+    "score": 250.0
 }

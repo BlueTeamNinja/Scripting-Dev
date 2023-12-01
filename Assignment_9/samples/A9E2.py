@@ -16,6 +16,8 @@ def get_grade_list():
     return sorted([float(grade) for grade in sys.argv[1:] if float(grade) != 0.0], reverse=True)
 
 def calculate_grade_stats(grades):
+    if 0.0 in grades:
+        grades.remove(0.0)
     num_grades = len(grades)
     lowest = min(grades)
     highest = max(grades)

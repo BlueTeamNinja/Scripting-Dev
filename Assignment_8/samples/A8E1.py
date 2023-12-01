@@ -3,7 +3,10 @@ def the_difference(a, b):
     Subtracts the smaller number from the larger number and returns the result.
     Returns None if either input is not an integer.
     """
-    if not isinstance(a, int) or not isinstance(b, int):
+    try: 
+        a = int(a)
+        b = int(b)
+    except:
         return None
 
     if a > b:
