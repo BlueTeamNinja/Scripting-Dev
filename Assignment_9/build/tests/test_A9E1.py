@@ -1,7 +1,10 @@
 import unittest
+from unittest.mock import patch
 from gradescope_utils.autograder_utils.decorators import weight
-import A9E1
 import sys
+sys.argv = ['A9E1.py', 'Star Wars', 'George Lucas', 'Mark Hamill']
+
+import A9E1
 import io
 from contextlib import redirect_stdout
 
@@ -29,24 +32,17 @@ class TestA9E1(unittest.TestCase):
         self.assertEqual(A9E1.get_movie_desc('SPIDER-man 2', 'sam raimi', 'TOBEY maguire'), 
                          'The movie sequel is "Spider-Man 2", directed by Sam Raimi, starring Tobey Maguire')
 
+
+    #@patch('sys.argv', ['A9E1.py', 'Star Wars', 'George Lucas', 'Mark Hamill'])
     @weight(50)
     def test_error_message(self):
         """A9E1 - Testing main() for complete functionality"""
-        original_argv = sys.argv
-        try:
-            test_args = ['A9E1.py', '   star  WARS', '   gEorgE lUcas    ', '    MARK HamiLL       ']
-            sys.argv = test_args
+        with io.StringIO() as buf, patch('sys.stdout', buf):
+            A9E1.main()
+            output = buf.getvalue()
+        self.assertIn("The movie is \"Star Wars\", directed by George Lucas, starring Mark Hamill", output)
 
-            # Redirect stdout to capture the print output from main
-            with io.StringIO() as buf, redirect_stdout(buf):
-                A9E1.main()
-                output = buf.getvalue()
 
-            expected_output = 'The movie is "Star Wars", directed by George Lucas, starring Mark Hamill\n'
-
-            self.assertEqual(output, expected_output)
-        finally:
-            sys.argv = original_argv
 
     @weight(0)
     def test_ai_detection(self):

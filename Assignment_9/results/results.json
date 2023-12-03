@@ -2,10 +2,9 @@
     "tests": [
         {
             "name": "AI DETECTION",
-            "score": 0.0,
+            "score": 0,
             "max_score": 0,
-            "status": "failed",
-            "output": "Test Failed: 'D3ADB33FCAF3' != 'You will receive a 0 for this assignment [49 chars]ode.'\n- D3ADB33FCAF3\n+ You will receive a 0 for this assignment and have been reported for not writing your own code.\n\n"
+            "status": "passed"
         },
         {
             "name": "A9E1 - Testing clean_string() for functionality",
@@ -45,31 +44,35 @@
         },
         {
             "name": "A9E2 - Testing calculate_grade_stats() for valid output",
-            "score": 10,
+            "score": 0.0,
             "max_score": 10,
-            "status": "passed"
+            "status": "failed",
+            "output": "Test Failed: sequence item 0: expected str instance, float found\n"
         },
         {
             "name": "A9E2 - Testing calculate_grade_stats() with zero grade",
-            "score": 20,
+            "score": 0.0,
             "max_score": 20,
-            "status": "passed"
+            "status": "failed",
+            "output": "Test Failed: sequence item 0: expected str instance, int found\n"
         },
         {
             "name": "A9E2 - Testing get_grade_list() with a zero grade",
-            "score": 20,
+            "score": 0.0,
             "max_score": 20,
-            "status": "passed"
+            "status": "failed",
+            "output": "Test Failed: (['96.9', '85.1', '77.5', '61.8', '59.3', '43.2', '34.2'], 7, '96.9', '34.2') != [96.9, 85.1, 77.5, 61.8, 59.3, 43.2, 34.2]\n"
         },
         {
             "name": "A9E2 - Testing main() for complete functionality",
-            "score": 50,
+            "score": 0.0,
             "max_score": 50,
-            "status": "passed"
+            "status": "failed",
+            "output": "Test Failed: 'The [124 chars] 96.9\\nThe bottom grade is 34.2\\nThe average grade is 65.4\\n\\n' != 'The [124 chars] 96.9\\nThe bottom grade is 34.2\\nThe average grade is 65.4\\n'\n  The grades listed top-to-bottom are: 96.9, 85.1, 77.5, 61.8, 59.3, 43.2, 34.2\n  There are 7 grades in the list.\n  The top grade is 96.9\n  The bottom grade is 34.2\n  The average grade is 65.4\n- \n\n"
         }
     ],
     "leaderboard": [],
     "visibility": "visible",
-    "execution_time": "0.01",
-    "score": 250.0
+    "execution_time": "0.02",
+    "score": 150.0
 }

@@ -1,9 +1,11 @@
 import unittest
 from gradescope_utils.autograder_utils.decorators import weight
-import A9E2
+
 import sys
 import io
 from contextlib import redirect_stdout
+import importlib
+import A9E2
 
 
 class TestA9E2(unittest.TestCase):
@@ -26,6 +28,8 @@ class TestA9E2(unittest.TestCase):
         try:
             test_args = ['A9E2.py', '59.3', '77.5', '43.2', '96.9', '85.1', '61.8', '34.2']
             sys.argv = test_args
+            importlib.reload(A9E2)
+
             expected_result = [96.9, 85.1, 77.5, 61.8, 59.3, 43.2, 34.2]
             self.assertEqual(A9E2.get_grade_list(), expected_result)
 #           self.fail("Your script isn't handling command-line arguments.  If you are still making this mistake at this point you need to do some reading and catch up.")
@@ -40,6 +44,8 @@ class TestA9E2(unittest.TestCase):
         try:
             test_args = ['A9E2.py', '59.3', '77.5', '43.2', '96.9', '0.0','85.1', '61.8', '34.2']
             sys.argv = test_args
+            importlib.reload(A9E2)
+
             expected_result = [96.9, 85.1, 77.5, 61.8, 59.3, 43.2, 34.2]
             self.assertEqual(A9E2.get_grade_list(), expected_result)
         finally:
@@ -52,6 +58,9 @@ class TestA9E2(unittest.TestCase):
         try:
             test_args = ['A9E2.py', '59.3', '77.5', '43.2', '0.0', '96.9', '85.1', '61.8', '34.2']
             sys.argv = test_args
+
+            importlib.reload(A9E2)
+
 
             # Redirect stdout to capture the print output from main
             with io.StringIO() as buf, redirect_stdout(buf):

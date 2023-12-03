@@ -85,7 +85,11 @@ The average grade is 61.0
 #### Required Script Structure
 - `main()`: Calls other functions, assigns return values to variables, prints *rounded* output.
 - `calculate_grade_stats(grades)`: Processes grades and returns a tuple with grade statistics.
-- `get_grade_list()`: Retrieves grade list from command line.
+  - *count*, *top*, *bottom*, *average* in that order.  Just like the example above.
+  - This is not the place to round your numbers
+- `get_grade_list()`: Retrieves grade list from command line and returns them as floats.
+  - Removes the `0` values
+  - Sorts the grades highest to lowest
 
 #### Gradescope Submission
 A Python script named `A9E2.py`.

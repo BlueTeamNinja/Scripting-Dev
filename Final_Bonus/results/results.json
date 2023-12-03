@@ -1,0 +1,37 @@
+{
+    "tests": [
+        {
+            "name": "Bruce Forte Evaluation",
+            "status": "passed"
+        },
+        {
+            "name": "Testing brute_force_attack function",
+            "status": "failed",
+            "output": "Test Failed: 7503545 != 110545 : My ultimate Ninja password should be cracked in only 110545 attempts!\n"
+        },
+        {
+            "name": "Format string Check",
+            "score": 0.0,
+            "max_score": 0,
+            "status": "failed",
+            "output": "Test Failed: False is not true : This test literally does nothing.  Or does it?  Can you figure out how to pass it?\n"
+        },
+        {
+            "name": "Testing performance_analysis function",
+            "status": "passed",
+            "output": "My potatoe can outrun your potatoe for sure.\n"
+        },
+        {
+            "name": "Robin laid an Easter Egg",
+            "status": "passed"
+        },
+        {
+            "name": "Testing set_password function with a known seed",
+            "status": "passed"
+        }
+    ],
+    "leaderboard": [],
+    "visibility": "visible",
+    "execution_time": "1.05",
+    "score": 0.0
+}

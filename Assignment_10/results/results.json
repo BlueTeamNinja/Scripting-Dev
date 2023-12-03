@@ -1,0 +1,50 @@
+{
+    "tests": [
+        {
+            "name": "A10E1: Test all_divisible function",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed"
+        },
+        {
+            "name": "A10E1: Test any_divisible function",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed"
+        },
+        {
+            "name": "A10E1: Test difference function",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed"
+        },
+        {
+            "name": "A10E2: Test remove_str_from_list function",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed"
+        },
+        {
+            "name": "A10E2: Test remove_str_from_list function with no occurrences",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed"
+        },
+        {
+            "name": "A10E3: Test handling of invalid guesses",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed"
+        },
+        {
+            "name": "A10E3: Test main function game flow",
+            "score": 10,
+            "max_score": 10,
+            "status": "passed"
+        }
+    ],
+    "leaderboard": [],
+    "visibility": "visible",
+    "execution_time": "0.00",
+    "score": 70
+}
