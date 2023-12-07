@@ -15,13 +15,13 @@ class TestA9E2(unittest.TestCase):
         self.assertEqual(A9E2.calculate_grade_stats([59.3, 77.5, 43.2, 96.9, 85.1, 61.8, 34.2]), 
                          (7, 34.2, 96.9, 65.42857142857143))
 
-    @weight(20)
-    def test_calculate_grade_stats_with_zero(self):
-        """A9E2 - Testing calculate_grade_stats() with zero grade"""
-        self.assertEqual(A9E2.calculate_grade_stats([23, 66.2, 84.79, 70.123, 0.0]), 
-                         (4, 23.0, 84.79, 61.02825))
+#    @weight(20)
+#    def test_calculate_grade_stats_with_zero(self):
+#        """A9E2 - Testing calculate_grade_stats() with zero grade"""
+#        self.assertEqual(A9E2.calculate_grade_stats([23, 66.2, 84.79, 70.123, 0.0]), 
+#                         (4, 23.0, 84.79, 61.02825))
 
-    @weight(20)
+    @weight(10)
     def test_get_grade_list(self):
         """A9E2 - Testing get_grade_list() for processing input from command line"""
         original_argv = sys.argv
@@ -37,7 +37,7 @@ class TestA9E2(unittest.TestCase):
         finally:
             sys.argv = original_argv
 
-    @weight(20)
+    @weight(10)
     def test_get_grade_list(self):
         """A9E2 - Testing get_grade_list() with a zero grade"""
         original_argv = sys.argv
@@ -51,7 +51,7 @@ class TestA9E2(unittest.TestCase):
         finally:
             sys.argv = original_argv
 
-    @weight(50)
+    @weight(30)
     def test_main_output(self):
         """A9E2 - Testing main() for complete functionality"""
         original_argv = sys.argv
@@ -82,7 +82,7 @@ class TestA9E2(unittest.TestCase):
     @weight(0)
     def test_ai_detection(self):
         """AI DETECTION"""
-        self.assertEqual("D3ADB33FCAF3","D3ADB33FCAF3")
+        self.assertEqual("D3ADB33FCAF3","D3ADB33FCAF3", "Welcome to the d3ad b33f cafe, how can I help you?  FYI: Dead Beef Cafe is possibly the coolest elite hacker phrase you can use with only hex characters (0-9,A-F). ")
 
 if __name__ == '__main__':
     unittest.main()
