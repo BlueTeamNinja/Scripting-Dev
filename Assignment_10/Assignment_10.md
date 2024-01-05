@@ -72,12 +72,12 @@ Modify `remove_str_from_list()` from a previous activity (M9A4) to remove multip
 Example function calls and return values are provided.
 
 ```python
-    my_list = ['apple', 'banana', 'apple', 'pear']
-    print(remove_str_from_list(my_list, 'apple', max=2))  # Should return 2
-    print(my_list)  # ['banana', 'pear']
-    print(remove_str_from_list(my_list, 'apple'))  # Should return 0
-    print(my_list)  # ['banana', 'pear']
-S```
+    zoo = ['Ape', 'Bee', 'dog', 'Cat', 'Dog', 'Ewe', 'Fox', 'Bee', 'Ewe', 'ewe']
+    print(remove_str_from_list(zoo, 'Bee', True, 2)) # Should return 2
+    print(remove_str_from_list(zoo, 'Dog', True, 2)) # Should return 1
+    print(remove_str_from_list(zoo, 'Ewe', False, 4)) # Should return 3
+    print(zoo)
+```
 
 ### Hints:
 * Use a loop iterating `max` times. Return early if no more instances of the string are found.

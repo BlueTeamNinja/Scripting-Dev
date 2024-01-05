@@ -1,36 +1,33 @@
-"""
-A10E2.py: A Python module to remove multiple instances of a specified string from a list.
-
-This script provides a function:
-- remove_str_from_list(): Removes specified string instances from a list, 
-  up to a maximum count, and returns the count of instances removed.
-"""
-
-def remove_str_from_list(lst, string_to_remove, max=1):
+def remove_str_from_list(list_of_str, str_to_remove, case_sensitive=True, max=1):
     """
     Remove multiple instances of a specified string from a list.
 
     Parameters:
-    lst (list): The list from which the string will be removed.
-    string_to_remove (str): The string to remove from the list.
+    list_of_str (list): The list from which the string will be removed.
+    str_to_remove (str): The string to remove from the list.
+    case_sensitive (bool, optional): Whether the match should be case sensitive.
     max (int, optional): The maximum instances to remove. Defaults to 1.
 
     Returns:
     int: The count of removed instances.
     """
     count = 0
-    for _ in range(max):
-        if string_to_remove in lst:
-            lst.remove(string_to_remove)
+    if case_sensitive:
+        while str_to_remove in list_of_str and count < max:
+            list_of_str.remove(str_to_remove)
             count += 1
-        else:
-            break
+    else:
+        str_to_remove_lower = str_to_remove.lower()
+        i = 0
+        while i < len(list_of_str) and count < max:
+            if list_of_str[i].lower() == str_to_remove_lower:
+                list_of_str.pop(i)
+                count += 1
+                continue  # Skip incrementing i as the list size has reduced
+            i += 1 
     return count
 
 # Example usage
 if __name__ == "__main__":
-    my_list = ['apple', 'banana', 'apple', 'pear']
-    print(remove_str_from_list(my_list, 'apple', max=2))  # Should return 2
-    print(my_list)  # ['banana', 'pear']
-    print(remove_str_from_list(my_list, 'apple'))  # Should return 0
-    print(my_list)  # ['banana', 'pear']
+     print(remove_str_from_list(['apple', 'banana', 'apple', 'pear'], 'apple', max=2))
+
