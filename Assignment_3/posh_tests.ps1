@@ -26,7 +26,7 @@ $data = $files | Where-object Extension -like ".csv"
 
         $autograder_results = New-Object -TypeName PSObject -Property @{
             score = $score
-            output = "$($mistakes | %{$_ + "`n"})"
+            output = "$($mistakes | foreach-object{$_ + "`n"})"
         }
         
         $autograder_results | ConvertTo-Json | Out-File '/autograder/results/results.json' -Force
@@ -39,7 +39,7 @@ $data = $files | Where-object Extension -like ".csv"
 
         $autograder_results = New-Object -TypeName PSObject -Property @{
             score = $score
-            output = "$($mistakes | %{$_ + "`n"})"
+            output = "$($mistakes | ForEach-Object{$_ + "`n"})"
         }
         
         $autograder_results | ConvertTo-Json | Out-File '/autograder/results/results.json' -Force
