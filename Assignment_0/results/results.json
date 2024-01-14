@@ -1,0 +1,20 @@
+{
+  "visibility": "visible",
+  "tests": [
+    {
+      "output": "Failed: Script 'A0E1.ps1' not found. Ensure the file name is correct and case-sensitive.",
+      "max_score": 10,
+      "name": "File Name Check",
+      "score": 0,
+      "status": "failed"
+    },
+    {
+      "output": "You correctly changed it to your own name!",
+      "max_score": 10,
+      "name": "Checking Name Change",
+      "score": 10,
+      "status": "passed"
+    }
+  ],
+  "score": 10.0
+}

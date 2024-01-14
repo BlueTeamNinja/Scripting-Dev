@@ -31,4 +31,3 @@ apt-get update
 # Install PowerShell
 apt-get install -y powershell
 
-cp /autograder/source/
