@@ -93,11 +93,11 @@ Here are 10 basic regex exercises suitable for students to practice with. Each e
 1.  **Match "a" or "A"**: Find any instance of "a" regardless of case.
 1.  **Match the number 86**: Match the number 86.
 1.  **Match any vowel**: Match from the set `a e i o u`
-2.  **Match the first letter of a line**: Match the first letter in a line.
-3.  **Match Words with Exactly 5 Letters**: Find words that are exactly 5 letters long.
-4.  **Match All Numbers**: Match any sequence of digits in a string.
-5.  **Find Dates in "YYYY-MM-DD" Format**: Match any date in the format of "YYYY-MM-DD".
-6.  **Match Hexadecimal Colors**: Find any hexadecimal color codes, which start with `#` followed by 3 or 6 hexadecimal characters.
+1.  **Match the first letter of a line**: Match the first letter in any line. Hint: `(?ms)REGEX` [https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options#multiline-mode](Read More)
+1.  **Match Words with Exactly 5 Letters**: Find words that are exactly 5 letters long. Hint: `\bREGEX\b` [https://www.regular-expressions.info/wordboundaries.html](Read more)
+1.  **Match All Numbers**: Match any sequence of digits in a string.
+1.  **Find dates in "YYYY-MM-DD" Format**: Match any date in the format of "YYYY-MM-DD".  Don't worry about exactly matching 12 for month, if someone puts a date of `0010-83-48` that's their own fault, today.
+2.  **Match Hexadecimal values**: Find any 6 character hexadecimal codes.
 
 ### PowerShell Script Template
 

@@ -38,19 +38,19 @@ $regex3 = '[aeiou]'
 Test-Regex -regex $regex3 -string $testString -exercise 3
 
 # Exercise 4
-$regex4 = '^[A-z]'
+$regex4 = '(?ms)^[A-z]'
 Test-Regex -regex $regex4 -string $testString -exercise 4
 
-# Testing Exercise 5 - Extract the First Word of Every Sentence
-$regex5 = '\b\w+'
+# Exercise 5
+$regex5 = '\b\w{5}\b'
 Test-Regex -regex $regex5 -string $testString -exercise 5
 
-# Testing Exercise 6 - Match Words with Exactly 5 Letters
-$regex6 = '\b\w{5}\b'
+# Exercise 6
+$regex6 = '\d'
 Test-Regex -regex $regex6 -string $testString -exercise 6
 
 # Testing Exercise 7 - Match All Numbers
-$regex7 = '\d+'
+$regex7 = '\d{4}-\d{2}-\d{2}'
 Test-Regex -regex $regex7 -string $testString -exercise 7
 
 # Testing Exercise 8 - Match Hexadecimal Colors
