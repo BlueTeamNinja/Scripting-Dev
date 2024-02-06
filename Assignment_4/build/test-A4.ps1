@@ -76,20 +76,20 @@ if($null -eq $submission) {
 }
 
 Write-Output "Validating file count..."
-if(($submission | Measure-Object).count -gt 1) {
-    Write-Verbose "Multiple files detected."
-    $testsArray += New-TestCase -Name "Count submissions" -Output "Too many files submitted" -Status 'failed'
+if(($submission | Measure-Object).count -eq 2) {
+    Write-Verbose "Two files detected."
+    $testsArray += New-TestCase -Name "Count submissions" -Output "Correct number of files submitted" -Status 'passed' -score 10.0
 } else {
-    Write-Verbose "Single file detected."
-    $testsArray += New-TestCase -Name "Count submissions" -Output "Correct amount of files submitted" -Status 'passed' -score 5.0
+    Write-Verbose "!2 files detected."
+    $testsArray += New-TestCase -Name "Count submissions" -Output "Incorrect amount of files submitted" -Status 'fail'
 }
 
 Write-Output "Checking filename..."
-if($submission[0].Name -like "assignment_4.ps1") {
-    Write-Verbose "Filename is correct."
-    $testsArray += New-TestCase -Name "Correct Filename" -Output "Your submission contains the correct filename" -Status 'passed' -score 5.0
+if(($submission[0].Name -like "A4E1.ps1") -and ($submission[1].Name -like "A4E2.ps1")) {
+    Write-Verbose "Filenames correct."
+    $testsArray += New-TestCase -Name "Correct Filenames" -Output "Your submission contains the correct filename" -Status 'passed' -score 5.0
 } else {
-    Write-Verbose "Incorrect filename detected."
+    Write-Verbose "Incorrect filenames detected."
     $testsArray += New-TestCase -Name "Incorrect Filename" -Output "Your submission contains the incorrect filename" -Status 'failed'
 }
 
@@ -170,5 +170,39 @@ if( -not $OutputCompare
 
 "@ -Visibility "visible" -status 'failed'
 }
+
+# Define the expected output for verification
+$expectedOutput = @(
+    "Exercise 1 - 15 Matches found!",
+    "Exercise 2 - 1 Matches found!",
+    "Exercise 3 - 63 Matches found!",
+    "Exercise 4 - 5 Matches found!",
+    "Exercise 5 - 7 Matches found!",
+    "Exercise 6 - 16 Matches found!",
+    "Exercise 7 - 1 Matches found!",
+    "Exercise 8 - 2 Matches found!"
+)
+
+# Verify script output
+$scriptPath = $submission[1].FullName
+$scriptOutput = . $submission[1].FullName
+$match = Compare-Object -ReferenceObject $expectedOutput -DifferenceObject $scriptOutput -SyncWindow 0
+
+if ($null -eq $match) {
+    $testsArray += New-TestCase -Name "Verify Script Output" -Output "Script output matches expected." -Score 25 -MaxScore 25 -Status "passed"
+} else {
+    $testsArray += New-TestCase -Name "Verify Script Output" -Output "Script output does not match expected." -Score 0 -MaxScore 25 -Status "failed"
+}
+
+# Check source code for compliance
+$scriptContent = Get-Content -Path $scriptPath | Where-Object { $_.Trim() -and $_ -notmatch '^\s*#' }
+$nonCompliantLines = $scriptContent | Where-Object { $_ -notmatch '^\s*\$|^\s*Test-Regex' }
+
+if ($nonCompliantLines.Count -eq 0) {
+    $testsArray += New-TestCase -Name "Source Code Inspection" -Output "Source code inspection passed." -Score 25 -MaxScore 25 -Status "passed"
+} else {
+    $testsArray += New-TestCase -Name "Source Code Inspection" -Output "Source code contains non-compliant lines.  Did you just try to beat the system by writing out the number instead of doing the Regex?  NAUGHTY!" -Score 0 -MaxScore 25 -Status "failed"
+}
+
 
 return WriteAndSaveTest -results $results -testsArray $testsArray

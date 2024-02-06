@@ -97,7 +97,7 @@ Here are 10 basic regex exercises suitable for students to practice with. Each e
 1.  **Match Words with Exactly 5 Letters**: Find words that are exactly 5 letters long. Hint: `\bREGEX\b` [https://www.regular-expressions.info/wordboundaries.html](Read more)
 1.  **Match All Numbers**: Match any sequence of digits in a string.
 1.  **Find dates in "YYYY-MM-DD" Format**: Match any date in the format of "YYYY-MM-DD".  Don't worry about exactly matching 12 for month, if someone puts a date of `0010-83-48` that's their own fault, today.
-2.  **Match Hexadecimal values**: Find any 6 character hexadecimal codes.
+1.  **Match Hexadecimal values**: Find any 6 character hexadecimal codes.
 
 ### PowerShell Script Template
 
