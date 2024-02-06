@@ -1,0 +1,29 @@
+{
+  "stdout_visibility": "visible",
+  "test_output_format": "md",
+  "visibility": "visible",
+  "tests": [
+    {
+      "status": "passed",
+      "score": 0,
+      "output": "Correct number of files submitted",
+      "name": "Count submissions"
+    },
+    {
+      "status": "passed",
+      "score": 0,
+      "output": "Your submission contains the correct filename",
+      "name": "Correct Filenames"
+    },
+    {
+      "status": "failed",
+      "score": 0,
+      "output": "Your submission did not successfully execute without errors. This means it cannot be graded and results in a grade of 0.",
+      "name": "**FAIL** - Script Execution"
+    }
+  ],
+  "extra_data": {},
+  "output_format": "simple_format",
+  "output": "Thank you for your submission.",
+  "test_name_format": "simple_format"
+}

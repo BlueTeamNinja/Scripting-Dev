@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "loading powershell test cases"
+pwsh -File /autograder/source/test-A4.ps1
