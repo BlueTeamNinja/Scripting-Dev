@@ -4,7 +4,7 @@ You are about to create your first script as an assignment.  I'm also using an a
 
 ## Requirements
 
-1. Your script named `assignment_3.ps1`
+1. Your script named `A3E1.ps1`
 1. Your CSV file named `organizations-1000.csv` which is available on D2L under Module 3. 
 
 Do *NOT* use any other names.  These are exactly what the autograder is looking for and if you get the names wrong, it won't run and I have nothing to mark. 
@@ -20,4 +20,4 @@ Do *NOT* use any other names.  These are exactly what the autograder is looking 
 * Do not use any other variable names or you will lose points.
 * Do not use `Write-Host` to display output, it is very different from `Write-Output` especially in scripts.  
 * I have created test cases with a variety of values of query that must match, so do not edit the source data and do not add any additional characters to the value of query.  E.g.  Do not assume a `*` character, test by using it as the argument.  
-* Test your script before uploading!  It must run without errors and one of the test cases I use is: `./assignment_3.ps1 Computer*` and I am expecting 32 results. 
+* Test your script before uploading!  It must run without errors and one of the test cases I use is: `./A3E1.ps1 Computer*` and I am expecting 32 results. 

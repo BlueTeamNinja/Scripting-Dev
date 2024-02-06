@@ -1,0 +1,41 @@
+{
+  "score": 40.0,
+  "visibility": "visible",
+  "tests": [
+    {
+      "score": 10.0,
+      "output": "Script name is valid.",
+      "max_score": 10.0,
+      "name": "Script Name Check",
+      "status": "passed"
+    },
+    {
+      "score": 10.0,
+      "output": "Data file name is valid.",
+      "max_score": 10.0,
+      "name": "Data File Name Check",
+      "status": "passed"
+    },
+    {
+      "score": 5.0,
+      "output": "The $query variable is used correctly.",
+      "max_score": 5.0,
+      "name": "Query Variable Usage",
+      "status": "passed"
+    },
+    {
+      "score": 5.0,
+      "output": "The $output variable is used correctly.",
+      "max_score": 5.0,
+      "name": "Output Variable Usage",
+      "status": "passed"
+    },
+    {
+      "score": 10.0,
+      "output": "Correct results for test case using 'Computer*'.",
+      "max_score": 10.0,
+      "name": "Test Case Execution",
+      "status": "passed"
+    }
+  ]
+}
