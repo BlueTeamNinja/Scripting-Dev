@@ -30,11 +30,11 @@ $regex1 = '[aA]'
 Test-Regex -regex $regex1 -string $testString -exercise 1
 
 # Exercise 2
-$regex2 = '86'
+$regex2 = ''
 Test-Regex -regex $regex2 -string $testString -exercise 2
 
 # Exercise 3
-$regex3 = '[aeiou]'
+$regex3 = ''
 Test-Regex -regex $regex3 -string $testString -exercise 3
 
 # Exercise 4
@@ -46,13 +46,13 @@ $regex5 = '\b\w{5}\b'
 Test-Regex -regex $regex5 -string $testString -exercise 5
 
 # Exercise 6
-$regex6 = '\d'
+$regex6 = ''
 Test-Regex -regex $regex6 -string $testString -exercise 6
 
 # Testing Exercise 7 - Match All Numbers
-$regex7 = '\d{4}-\d{2}-\d{2}'
+$regex7 = ''
 Test-Regex -regex $regex7 -string $testString -exercise 7
 
 # Testing Exercise 8 - Match Hexadecimal Colors
-$regex8 = '#[0-9A-Fa-f]{6}'
+$regex8 = ''
 Test-Regex -regex $regex8 -string $testString -exercise 8
