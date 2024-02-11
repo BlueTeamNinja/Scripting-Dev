@@ -96,7 +96,7 @@ if(($submission[0].Name -like "A4E1.ps1") -and ($submission[1].Name -like "A4E2.
 Write-Output "Executing script..."
 try {
     $testLaunch = . /autograder/submission/A4E1.ps1 "$PSScriptroot/data/"
-    Write-Output $testLaunch
+    #Write-Output $testLaunch
     Write-Verbose "Script executed without errors."
     $testsArray += New-TestCase -Name "A4E1: Does it run?" -Output "Your submission executed without errors" -Status 'passed' -score 20.0
 } catch {
@@ -125,8 +125,8 @@ if($null -eq $email_rows) {
 Write-Output "Comparing script output with expected result..."
 $expectedresult = . $PSScriptroot/Find-EmailSolution.ps1 "/autograder/source/data/"
 # Format objects to string literals
-$expectedresult = $expectedresult | ForEach-Object {$_.ToString()} | select -first 3 -last 3
-$testLaunchString = $testLaunch | ForEach-Object {$_.ToString()} | select -first 3 -last 3
+$expectedresult = $expectedresult | ForEach-Object {$_.ToString()} | select-Object -first 3 -last 3
+$testLaunchString = $testLaunch | ForEach-Object {$_.ToString()} | select-Object -first 3 -last 3
 $OutputCompare = Compare-Object -ReferenceObject $expectedresult -DifferenceObject $testLaunchString
 if( -not $OutputCompare
 ) {
@@ -167,12 +167,17 @@ $expectedOutput = @(
 $scriptPath = '/autograder/submission/A4E2.ps1'
 $scriptOutput = . /autograder/submission/A4E2.ps1
 $match = Compare-Object -ReferenceObject $expectedOutput -DifferenceObject $scriptOutput -SyncWindow 0
-
+$mismatch = ($match  | Where-Object {$_.SideIndicator -eq '<='}).InputObject
+Write-Output $mismatch
 if ($null -eq $match) {
     $testsArray += New-TestCase -Name "A4E2: Verify Script Output" -Output "Script output matches expected." -Score 25 -MaxScore 25 -Status "passed"
 } else {
-    $testsArray += New-TestCase -Name "A4E2: Verify Script Output" -Output "Script output does not match expected." -Score 0 -MaxScore 25 -Status "failed"
+    $testsArray += New-TestCase -Name "A4E2: Verify Script Output" -Output "Script output does not match expected.`nDifference:`n$mismatch" -Score 0 -MaxScore 25 -Status "failed"
 }
+
+
+
+
 
 # Check source code for compliance
 $scriptContent = Get-Content -Path $scriptPath | Where-Object { $_.Trim() -and $_ -notmatch '^\s*#' } | Select-Object -Last 10

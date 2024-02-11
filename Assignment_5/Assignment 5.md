@@ -89,7 +89,7 @@ on line 32.
 
 ## USING AI
 
-Just stop doing it.  Seriously.  You're not doing yourself any favours.  I can't stop you but I can get clever and watch everything burn just for fun.  We're using Python 3.11 and that came out after ChatGPT's dataset.  Maybe I slid some newer syntax in here?   
+Don't use it on this one.  Seriously.  You're not doing yourself any favours.  It's not as clever as you think.  You're better off getting frustrated until you learn it.  Besides, we're using Python 3.11 and that came out after ChatGPT's dataset.  Maybe I slid some newer syntax in here?   
 
 
 

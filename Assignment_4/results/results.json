@@ -1,64 +1,64 @@
 {
-  "stdout_visibility": "visible",
-  "visibility": "visible",
-  "output": "Thank you for your submission.",
+  "extra_data": {},
   "tests": [
     {
-      "name": "Count submissions",
       "score": 10.0,
+      "name": "Marks for counting to two",
       "output": "Correct number of files submitted",
       "status": "passed"
     },
     {
-      "name": "Correct Filenames",
       "score": 5.0,
+      "name": "A4E1: Filename",
       "output": "Your submission contains the correct filename",
       "status": "passed"
     },
     {
-      "name": "Script Execution",
       "score": 20.0,
+      "name": "A4E1: Does it run?",
       "output": "Your submission executed without errors",
       "status": "passed"
     },
     {
-      "name": "Search Directory",
       "score": 5.0,
+      "visibility": "visible",
+      "name": "A4E1: Checking search_directory variable",
       "output": "Correct Search Directory variable detected",
-      "status": "passed",
-      "visibility": "visible"
-    },
-    {
-      "name": "Email Rows",
-      "score": 5.0,
-      "output": "Correct email_rows variable detected",
-      "status": "passed",
-      "visibility": "visible"
-    },
-    {
-      "name": "Output Match",
-      "score": 5.0,
-      "output": "Your output matched the test cases exactly or at least close enough to trick them.  Great work.",
-      "status": "passed",
-      "visibility": "visible"
-    },
-    {
-      "name": "Verify Script Output",
-      "score": 25.0,
-      "output": "Script output matches expected.",
-      "max_score": 25.0,
       "status": "passed"
     },
     {
-      "name": "Source Code Inspection",
-      "score": 25.0,
-      "output": "Source code inspection passed.",
+      "score": 5.0,
+      "visibility": "visible",
+      "name": "A4E1: Checking email_rows variable",
+      "output": "Correct email_rows variable detected",
+      "status": "passed"
+    },
+    {
+      "score": 0.0,
+      "visibility": "visible",
+      "name": "A4E1: Script Output",
+      "output": "    Output that does not match:\r\n    * * * * * * *\r\n    255 emails were probably found.\r\n    * * * * * * *\r\n    Expected Output: \r\n    * * * * * * *\r\n    Searching all .txt files in /autograder/source/data/ for email addresses... /autograder/source/data/output_1.csv:2:\"Franklin\",\"Mason\",\"Hockey\",\"email\",\"masonfranklin@hotmail.com\" /autograder/source/data/output_1.csv:3:\"Brian\",\"Dean\",\"Volleyball\",\"email\",\"brian.dean@netnavigators.org\" /autograder/source/data/output_3.csv:249:\"Isaiah\",\"Carroll\",\"Baseball\",\"email\",\"isaiah_carroll@datadeck.org\" /autograder/source/data/output_3.csv:250:\"Alicia\",\"Chu\",\"Basketball\",\"email\",\"chu.alicia@quantumcode.net\" 255 emails were found.\r\n    * * * * * * *\r\n\r\n",
+      "status": "failed"
+    },
+    {
+      "score": 0.0,
+      "name": "A4E2: Verify Script Output",
       "max_score": 25.0,
+      "output": "Script output does not match expected.\nDifference:\nExercise 6 - 16 Matches found! Exercise 8 - 2 Matches found!",
+      "status": "failed"
+    },
+    {
+      "score": 25.0,
+      "name": "A4E2: Source Code Inspection",
+      "max_score": 25.0,
+      "output": "Source code inspection passed.",
       "status": "passed"
     }
   ],
+  "stdout_visibility": "visible",
+  "output": "Thank you for your submission.",
+  "visibility": "visible",
   "test_output_format": "md",
-  "extra_data": {},
   "test_name_format": "simple_format",
   "output_format": "simple_format"
 }
