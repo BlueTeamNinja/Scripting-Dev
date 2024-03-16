@@ -13,10 +13,7 @@ class TestBonus(unittest.TestCase):
     def setUp(self):
         self.exercise_numbers = [1, 2, 3]
         self.start_times = [
-            datetime(2023, 9, 5, 17, 0, 0),  # 5pm September 5th, 2023
-            datetime(2023, 9, 11, 17, 0, 0), # 5pm September 11th, 2023
-            datetime(2023, 9, 7, 8, 0, 0),   # 8am September 7th, 2023
-            datetime(2023, 9, 8, 8, 0, 0)    # 8am September 8th, 2023
+            datetime(2024, 1, 9, 14, 0, 0),  # January 9th, 2024 @ 1400
         ]
 
     def load_module(self, exercise_number):
