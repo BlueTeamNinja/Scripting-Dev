@@ -13,7 +13,7 @@ class TestBonus(unittest.TestCase):
     def setUp(self):
         self.exercise_numbers = [1, 2, 3]
         self.start_times = [
-            datetime(2024, 1, 9, 14, 0, 0),  # January 9th, 2024 @ 1400
+            datetime(2024, 1, 9, 14, 0, 0)  # January 9th, 2024 @ 1400
         ]
 
     def load_module(self, exercise_number):
@@ -52,11 +52,13 @@ class TestBonus(unittest.TestCase):
         """BONUS: Test Exercise 3 for default parameters."""
         module = self.load_module(3)
         current_datetime = datetime.now()
+        # Adjusted to handle one or more start times
         possible_seconds = [int((current_datetime - start_time).total_seconds()) for start_time in self.start_times]
         actual_seconds = module.calc_total_seconds()
-        leeway_seconds = 10 * 60
+        leeway_seconds = 10 * 60  # 10 minutes leeway in seconds
+        # Check if actual_seconds is within leeway_seconds of any possible_seconds
         passed = any(abs(actual_seconds - possible) <= leeway_seconds for possible in possible_seconds)
-        self.assertTrue(passed, f"Exercise 3 failed: Expecting {possible_seconds[0]},{possible_seconds[1]},{possible_seconds[2]}, or {possible_seconds[3]} give or take 600 (10 minutes)\nReceived: {actual_seconds}.")
+        self.assertTrue(passed, f"Exercise 3 failed: Expecting one of the values within ±600 seconds (10 minutes) of {possible_seconds}\nReceived: {actual_seconds}.")
 
 if __name__ == '__main__':
     unittest.main()

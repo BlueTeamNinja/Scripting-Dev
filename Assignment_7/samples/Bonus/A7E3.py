@@ -1,136 +1,49 @@
 """
-
--------
-
-Author: Elicia Ramitt
-
--------
-
-
-
--------------
-
-Name of File: A7E3.py (Assignment 7 Exercise 3)
-
--------------
-
-
-
-------------
-
-Description:  We will be converting hours, minutes, and seconds into seconds
-
------------- 
-
-
-
--------------------------------
-
-Command to run Script from CLI:  python3 A7E3.py hr min sec
-
--------------------------------
-
-
-
-------------------------------
-
-
-Description of the Parameters: A7E3.py = this is the name of the file and is technically the first parameter
-
-                               hr = this is the number of hour(s) that will be converted to seconds
-                               min = this is the number of minute(s) that will be converted to seconds
-                               sec = this is the number of second(s) that will be added to
-
-------------------------------
-
+Description: Calculates and prints total seconds from provided command line parameters.
+Parameters: hours, minutes, seconds
+Author: Your Name
 """
 
-# Import argv file
-from sys import argv
-# Import date from datetime do get those sweet, sweet bonus marks
-# import datetime for the datetime.datetime
-import datetime
+import sys
 from datetime import datetime
-# Get today's date and time
 
-try:
-    currentState = datetime.now()
-    # Start of my favourite class (aka Scripting Fundamentals :P)
-    #startOfClassStr = "2023/09/05 17:00:00"
+# Constants
+SEC_PER_MIN = 60
+MIN_PER_HOUR = 60
+HOURS_PER_DAY = 24
 
-    # Start of my favourite class (aka Scripting Fundamentals :P)
-    #startOfClassStrToObj = datetime.datetime(2023, 9, 11, 17, 0, 0)
+# Chosen start time
+START_TIME = datetime(2024, 1, 9, 14, 0, 0)
 
-    # Start of class object
-    startOfClassObj = datetime.fromisoformat('2023-09-11T17:00:00')
+def calc_total_seconds(hours=None, minutes=None, seconds=None):
+    """ Calculate total seconds from hours, minutes, and seconds """
+    if hours is None or minutes is None or seconds is None:
+        now = datetime.now()
+        delta = now - START_TIME
+        total_seconds = delta.days * HOURS_PER_DAY * MIN_PER_HOUR * SEC_PER_MIN + delta.seconds
+        return total_seconds
 
-    # Difference between now and start of class
-    #diff = currentState - startOfClassObj
-
-    diff = currentState - startOfClassObj
-    # Hours
-    diffHours = diff.days // 24
-
-
-
-    # days = time_diff.days
-    # seconds = time_diff.seconds
-    # hours = days * HOURS_PER_DAY + seconds // SECONDS_PER_MINUTE // MINUTES_PER_HOUR
-    # minutes = (seconds // SECONDS_PER_MINUTE) % MINUTES_PER_HOUR
-    # seconds = seconds % SECONDS_PER_MINUTE
-
-    # Seconds
-    diffSeconds = diff.seconds
-
-    # Minutes
-    #diffMins = diff.min 
-
-    diffMins = (diff.seconds // 60) % 60
-except:
-    None
-
-# calc_total_seconds function
-def calc_total_seconds(hrs=diffHours, mins=diffMins, secs=diffSeconds):
-    # Some constants
-    SEC_PER_MIN = 60
-    SEC_PER_HR = 3600
-
-    # Try statement
     try:
-        # Hrs to seconds
-        total = int(hrs * SEC_PER_HR)
-        total += int(mins * SEC_PER_MIN)
-        total += int(secs)
-    # Except statement
-    except:
+        return int(hours) * MIN_PER_HOUR * SEC_PER_MIN + int(minutes) * SEC_PER_MIN + int(seconds)
+    except ValueError:
         return None
-    return total
 
-# Define main
 def main():
-    
-    # Try statement
-    try:
-        # Hrs arg
-        hrs = int(argv[1])
-        # Min arg
-        mins = int(argv[2])
-        # Secs arg
-        secs = int(argv[3])
-        
-        allSecs = calc_total_seconds()
-        print(f"{hrs} hr {mins} min {secs} sec == {allSecs} sec")
-    # Except statement
-    except:
-        allSecs = calc_total_seconds()
-        print(f"{allSecs} sec")
+    if len(sys.argv) == 4:
+        # If there are command line arguments, process them.
+        hours, minutes, seconds = sys.argv[1:4]
+        total_seconds = calc_total_seconds(hours, minutes, seconds)
+        if total_seconds is not None:
+            print(f"{hours} hr {minutes} min {seconds} sec == {total_seconds} sec")
+        else:
+            print("Invalid input. Please provide integer values for hours, minutes, and seconds.")
+    else:
+        # If no command line arguments, calculate from the chosen start date.
+        total_seconds = calc_total_seconds()
+        hours = total_seconds // SEC_PER_MIN // MIN_PER_HOUR
+        minutes = (total_seconds // SEC_PER_MIN) % MIN_PER_HOUR
+        seconds = total_seconds % SEC_PER_MIN
+        print(f"{hours} hr {minutes} min {seconds} sec == {total_seconds} sec")
 
-        return None
-    # Call function
-
-    return allSecs
-
-
-"""# Run Main"""
 if __name__ == "__main__":
     main()

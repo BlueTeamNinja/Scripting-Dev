@@ -13,7 +13,7 @@ def script_run_command(file, directory='C:\\COMP86', interpreter='python'):
 
 def get_script_name():
     """ Return the name of the running script """
-    return sys.argv[0]
+    return 'A7E2.py'
 
 def get_script_location():
     """ Return the location of the running script """
