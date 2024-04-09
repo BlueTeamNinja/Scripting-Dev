@@ -35,11 +35,11 @@ class TestPythonH4CK3R(unittest.TestCase):
         print(f"My potatoe can outrun your potatoe for sure.")  # Allowing a variance
 
     # Additional tests for base64 encoded conditions with misleading headings
-    @weight(0)
-    def test_format_string_check(self):
-        """Format string Check"""
-        troll = random.choice([True,False])
-        self.assertTrue(troll, "This test literally does nothing.  Or does it?  Can you figure out how to pass it?")  # Needed 1 more test to make the list the right size
+#    @weight(0)
+#    def test_format_string_check(self):
+#        """Format string Check"""
+#        troll = random.choice([True,False])
+#        self.assertTrue(troll, "This test literally does nothing.  Or does it?  Can you figure out how to pass it?")  # Needed 1 more test to make the list the right size
 
     def test_bruce_forte_evaluation(self):
         """Bruce Forte Evaluation"""
